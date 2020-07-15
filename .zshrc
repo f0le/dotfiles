@@ -1,9 +1,6 @@
 #Additional PATH
 fpath+=$HOME/.zsh/pure
 path+=('~/.bin/')
-####autoload -Uz compinit promptinit
-#compinit
-#promptinit
 autoload -U promptinit; promptinit
 
 #Pure(prompt) configuration
@@ -81,6 +78,16 @@ man() {
 
 #set to automatically change into directory by typing it
 setopt auto_cd autopushd
+
+#start ssh-agent
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+fi
+#Add ssh-keys to agent
+/usr/bin/ssh-add ~/.ssh/github/id_ed25519 &> /dev/null
 
 #Must be at the end
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -1,0 +1,7 @@
+[user]
+	email = info@folie.dev
+	name = f0le
+[core]
+	editor = vim
+[url "git@github.com:"]
+	insteadOf = https://github.com/

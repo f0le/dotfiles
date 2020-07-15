@@ -1,0 +1,9 @@
+[submodule ".zsh/pure"]
+	path = .zsh/pure
+	url = https://github.com/sindresorhus/pure
+[submodule ".bin/borgscript"]
+	path = .bin/borgscript
+	url = https://github.com/f0le/borgscript
+[submodule ".config/awesome/awesome-wm-widgets"]
+	path = .config/awesome/awesome-wm-widgets
+	url = https://github.com/streetturtle/awesome-wm-widgets
