@@ -57,7 +57,6 @@ alias cat="cat -n"
 #calc with float point arithmetic
 alias bc="bc -li"
 alias tmux="tmux -2"
-alias dd="dd status=progress"
 alias log="script"
 
 #dircolors setting

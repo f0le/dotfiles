@@ -13,7 +13,9 @@ mkdir ${HOME}/.cache/mozilla/firefox
 mkdir ${HOME}/.mozilla
 whitelist ${HOME}/.cache/mozilla/firefox
 whitelist ${HOME}/.mozilla
-whitelist ${HOME}/Media/Downloads
+whitelist ${HOME}/.config/qBittorrent
+whitelist ${HOME}/.config/transmission
+whitelist ${HOME}/media/downloads
 
 whitelist /usr/share/mozilla
 include whitelist-usr-share-common.inc

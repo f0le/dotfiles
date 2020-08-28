@@ -8,7 +8,7 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper = "/home/trustno1/Media/Wallpaper/adrian-Xft-JdC-Jbc-unsplash.jpg"
+theme.wallpaper = "/home/trustno1/media/wallpaper/adrian-Xft-JdC-Jbc-unsplash.jpg"
 -- }}}
 
 -- {{{ Styles
