@@ -36,7 +36,7 @@ alias ll="ls --color=auto --human-readable --group-directories-first --classify 
 alias lla="ls --color=auto --human-readable --group-directories-first --classify -la"
 alias cp='cp -iv'
 alias mv='mv -iv'
-alias rm='rm -iv'
+alias rm='rm -v'
 alias rmdir='rmdir -v'
 alias ln='ln -v'
 alias mkdir='mkdir -v'

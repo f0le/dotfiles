@@ -17,6 +17,7 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 xset -dpms &
 xset s off &
 xset s noblank &
+nextcloud &
 redshift -l 48.1:11.57 -t 6500:3800 -b 1.0:0.6 &
 xrdb ~/.Xresources &
 exec /usr/bin/awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
