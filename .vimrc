@@ -3,9 +3,6 @@ if v:progname =~? "evim"
   finish
 endif
 
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-
 "fix colorscheme inside tmux and screen
 if &term =~ 'tmux-256color'
   " disable Background Color Erase (BCE) so that color schemes
@@ -71,7 +68,15 @@ if has("autocmd")
 
 else
 
-  set autoindent		" always set autoindenting on
+set autoindent		" always set autoindenting on
+
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 
 endif " has("autocmd")
 
@@ -111,5 +116,6 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+
 
 set runtimepath^=~/.vim/redact_pass/redact_pass.vim

@@ -53,7 +53,7 @@ alias siedler2="dosbox /home/trustno1/.Settlers/Siedler2/"
 alias shredfile="shred --random-source=/dev/urandom -n 5 -v -z -u"
 #show dirs with size
 alias du="du -kh --max-depth=1 ./"
-alias cat="cat -n"
+#alias cat="cat -n"
 #calc with float point arithmetic
 alias bc="bc -li"
 alias tmux="tmux -2"
@@ -87,6 +87,8 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
 fi
 #Add ssh-keys to agent
 /usr/bin/ssh-add ~/.ssh/github/id_ed25519 &> /dev/null
+/usr/bin/ssh-add ~/.ssh/greencare/id_ed25519 &> /dev/null
+/usr/bin/ssh-add ~/.ssh/openbsd/id_ed25519 &> /dev/null
 
 #Must be at the end
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
