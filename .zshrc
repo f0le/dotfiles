@@ -86,9 +86,9 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
 #Add ssh-keys to agent
-/usr/bin/ssh-add ~/.ssh/github/id_ed25519 &> /dev/null
-/usr/bin/ssh-add ~/.ssh/greencare/id_ed25519 &> /dev/null
-/usr/bin/ssh-add ~/.ssh/openbsd/id_ed25519 &> /dev/null
+/usr/bin/ssh-add ~/.ssh/github.com/id_ed25519 &> /dev/null
+/usr/bin/ssh-add ~/.ssh/greencare-baumpflege.de/id_ed25519 &> /dev/null
+/usr/bin/ssh-add ~/.ssh/folie.dev/id_ed25519 &> /dev/null
 
 #Must be at the end
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
