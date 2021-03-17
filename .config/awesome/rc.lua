@@ -59,8 +59,8 @@ end
 beautiful.init( "/home/trustno1/.config/awesome/zenburn.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvt"
-editor = os.getenv("EDITOR") or "vim"
+terminal = "kitty"
+editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -701,10 +701,9 @@ function run_once(prg,arg_string,pname,screen)
     end
 end
 
-awful.spawn("urxvt")  --  run_once doesn't spawn more than 2 urxvt
-awful.spawn("urxvt")
-awful.spawn("urxvt")
---awful.spawn("urxvt")
+awful.spawn("kitty")  --  run_once doesn't spawn more than 2 urxvt
+-- awful.spawn("urxvt")
+-- awful.spawn("urxvt")
 --run_once("firejail --seccomp /usr/bin/firefox")
 --run_once("conky")
 --run_once("conky -c /home/trustno1/.conkylog_rc")

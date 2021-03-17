@@ -1,4 +1,85 @@
-" When started as "evim", evim.vim will already have done these settings.
+" vim-plug, vim plugin manager
+" Plugins will be downloaded under the specified directory.
+call plug#begin('/home/trustno1/.vim/plugged')
+
+" Declare the list of plugins.
+" sane defaults
+Plug 'tpope/vim-sensible'
+
+" fuzzy search
+Plug 'junegunn/fzf'
+
+" directory tree in left pane
+Plug 'preservim/nerdtree'
+
+" show git status flags in nerdtree
+ Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" nerdtree syntax highlight
+ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" syntax highlighting 
+Plug 'sheerun/vim-polyglot'
+
+" coc plugin, completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" highlighter, good for webdev, needs truecolor support, different terminal
+" Plug 'norcalli/nvim-colorizer.lua'
+
+" vim lightline
+ Plug 'itchyny/lightline.vim'
+
+" git integration for lightline
+Plug 'tpope/vim-fugitive'
+
+" nerdtree icons
+ Plug 'ryanoasis/vim-devicons'
+
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+" activate nvim-colorizer.lua , doenst work with 256 color term only with
+" truecolor
+"set termguicolorours
+"lua require'colorizer'.setup()
+
+" Nerdtree config
+" Open Nerdtree with Control-n
+nnoremap <C-n> :NERDTreeToggle<CR>
+
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+
+" Start NERDTree on vim startup and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
+" disable the default arrows for folders
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+
+" lightline config
+" Disable showing of Mode at the bottom, it is shown in statusline
+set noshowmode
+
+" colorscheme and configuration of statusline
+" charvaluehex shows the character under the cursor in hex
+let g:lightline = {
+      \ 'colorscheme': 'seoul256',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' , 'charvaluehex' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+" alternative colroschemes 'one light' 'ayu_light' 'nord'
+
+" Old vim config below
+" When started as evim, evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
 endif
@@ -11,74 +92,24 @@ if &term =~ 'tmux-256color'
   set t_ut=
 endif
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
-
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
+" inoremap <C-U> <C-G>u<C-U>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
 endif
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-"if &t_Co > 2 || has("gui_running")
-"  syntax on
-"  set hlsearch
-"endif
-
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype indent plugin on
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  " Also don't do it when the mark is in the first line, that is the default
-  " position when opening a file.
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-
-  augroup END
-
-else
-
-set autoindent		" always set autoindenting on
-
-filetype plugin indent on
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
-
-endif " has("autocmd")
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
@@ -89,33 +120,13 @@ if !exists(":DiffOrig")
 endif
 
 "Personal config
-
 set backupdir=~/.vim/backup
 set wrapscan
 
-if has("autocmd")
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-endif
-
-"syntax highlighting
-syntax on
-
-"colorscheme solarized
-
-"shows numbers for the lines
+"show line numbers
 set number
 
 "search options
-:set incsearch ignorecase smartcase hlsearch
-
-"set tab to 4 spaces
-filetype plugin indent on
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
-
+set incsearch ignorecase smartcase hlsearch
 
 set runtimepath^=~/.vim/redact_pass/redact_pass.vim

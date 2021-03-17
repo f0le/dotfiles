@@ -17,8 +17,8 @@ zstyle ':completion:*' menu select
 
 #Vim mode
 #bindkey -v
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 #History search
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
@@ -58,6 +58,7 @@ alias du="du -kh --max-depth=1 ./"
 alias bc="bc -li"
 alias tmux="tmux -2"
 alias log="script"
+alias vim="nvim"
 
 #dircolors setting
 eval $(dircolors -p | perl -pe 's/^((CAP|S[ET]|O[TR]|M|E)\w+).*/$1 00/' | dircolors -)
@@ -89,6 +90,10 @@ fi
 /usr/bin/ssh-add ~/.ssh/github.com/id_ed25519 &> /dev/null
 /usr/bin/ssh-add ~/.ssh/greencare-baumpflege.de/id_ed25519 &> /dev/null
 /usr/bin/ssh-add ~/.ssh/folie.dev/id_ed25519 &> /dev/null
+
+# load FZF fuzzy finder
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 #Must be at the end
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
