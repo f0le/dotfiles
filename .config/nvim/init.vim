@@ -13,10 +13,10 @@ Plug 'junegunn/fzf'
 Plug 'preservim/nerdtree'
 
 " show git status flags in nerdtree
- Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " nerdtree syntax highlight
- Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " syntax highlighting 
 Plug 'sheerun/vim-polyglot'
@@ -25,16 +25,16 @@ Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " highlighter, good for webdev, needs truecolor support, different terminal
-" Plug 'norcalli/nvim-colorizer.lua'
+Plug 'norcalli/nvim-colorizer.lua'
 
 " vim lightline
- Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 
 " git integration for lightline
 Plug 'tpope/vim-fugitive'
 
 " nerdtree icons
- Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 
 " List ends here. Plugins become visible to Vim after this call.
@@ -42,8 +42,7 @@ call plug#end()
 
 " activate nvim-colorizer.lua , doenst work with 256 color term only with
 " truecolor
-"set termguicolorours
-"lua require'colorizer'.setup()
+" lua require'colorizer'.setup()
 
 " Nerdtree config
 " Open Nerdtree with Control-n
@@ -54,7 +53,7 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
     \ quit | endif
 
 " Start NERDTree on vim startup and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
+" autocmd VimEnter * NERDTree | wincmd p
 
 " disable the default arrows for folders
 let g:NERDTreeDirArrowExpandable = ''
@@ -109,7 +108,18 @@ set tabstop=4
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
-set expandtab
+set expandtab                           " Converts tabs to spaces
+set nowrap                              " Display long lines as just one line
+set pumheight=10                        " Makes popup menu smaller
+set ruler              			            " Show the cursor position all the time
+"set cmdheight=2                         " More space for displaying messages
+set conceallevel=0                      " So that I can see `` in markdown files
+set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
+set smartindent                         " Makes indenting smart
+set autoindent                          " Good auto indent
+set updatetime=300                      " Faster completion
+set timeoutlen=500                      " By default timeoutlen is 1000 ms
+set clipboard=unnamedplus               " Copy paste between vim and everything else
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
