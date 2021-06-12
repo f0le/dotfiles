@@ -4,3 +4,39 @@
 [submodule ".config/awesome/awesome-wm-widgets"]
 	path = .config/awesome/awesome-wm-widgets
 	url = https://github.com/streetturtle/awesome-wm-widgets
+[submodule ".vim/plugged/nerdtree"]
+	path = .vim/plugged/nerdtree
+	url = https://github.com/preservim/nerdtree
+[submodule ".vim/plugged/fzf"]
+	path = .vim/plugged/fzf
+	url = git@github.com:junegunn/fzf.git
+[submodule ".vim/plugged/lightline.vim"]
+	path = .vim/plugged/lightline.vim
+	url = git@github.com:itchyny/lightline.vim.git
+[submodule ".vim/plugged/coc.nvim"]
+	path = .vim/plugged/coc.nvim
+	url = git@github.com:neoclide/coc.nvim.git
+[submodule ".vim/plugged/nvim-colorizer.lua"]
+	path = .vim/plugged/nvim-colorizer.lua
+	url = git@github.com:norcalli/nvim-colorizer.lua.git
+[submodule ".vim/plugged/nerdtree-git-plugin"]
+	path = .vim/plugged/nerdtree-git-plugin
+	url = git@github.com:Xuyuanp/nerdtree-git-plugin.git
+[submodule ".vim/plugged/vim-airline"]
+	path = .vim/plugged/vim-airline
+	url = git@github.com:vim-airline/vim-airline.git
+[submodule ".vim/plugged/vim-devicons"]
+	path = .vim/plugged/vim-devicons
+	url = git@github.com:ryanoasis/vim-devicons.git
+[submodule ".vim/plugged/vim-fugitive"]
+	path = .vim/plugged/vim-fugitive
+	url = git@github.com:ryanoasis/vim-devicons.git
+[submodule ".vim/plugged/vim-nerdtree-syntax-highlight"]
+	path = .vim/plugged/vim-nerdtree-syntax-highlight
+	url = git@github.com:tiagofumo/vim-nerdtree-syntax-highlight.git
+[submodule ".vim/plugged/vim-polyglot"]
+	path = .vim/plugged/vim-polyglot
+	url = git@github.com:sheerun/vim-polyglot.git
+[submodule ".vim/plugged/vim-sensible"]
+	path = .vim/plugged/vim-sensible
+	url = git@github.com:tpope/vim-sensible.git
