@@ -109,7 +109,8 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab                           " Converts tabs to spaces
-set nowrap                              " Display long lines as just one line
+"set nowrap                              " Display long lines as just one line
+set wrap                              " Display long lines as two or more lines
 set pumheight=10                        " Makes popup menu smaller
 set ruler              			            " Show the cursor position all the time
 "set cmdheight=2                         " More space for displaying messages

@@ -18,6 +18,12 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
+set nowrap      " display long lines as one line
+set pumheight=10    "make popup menu smaller
+set cmdheight=2     "more space for displaying messages
+set conceallevel=0  "makes it possible to use `` in markdown files
+set clipboard=unnamedplus   "copy/paste automatically into system clipboard
+
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -69,6 +75,7 @@ if has("autocmd")
 else
 
 set autoindent		" always set autoindenting on
+set smartindent     "make indent smart
 
 filetype plugin indent on
 " show existing tab with 4 spaces width
@@ -76,7 +83,7 @@ set tabstop=4
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
-set expandtab
+set expandtab       "make tabs into spaces
 
 endif " has("autocmd")
 
@@ -107,15 +114,5 @@ set number
 
 "search options
 :set incsearch ignorecase smartcase hlsearch
-
-"set tab to 4 spaces
-filetype plugin indent on
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
-
 
 set runtimepath^=~/.vim/redact_pass/redact_pass.vim

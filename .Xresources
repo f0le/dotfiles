@@ -15,7 +15,7 @@ URxvt.scrollBar: false
 !Alternative, monospaced fontvery good, too
 !URxvt.font: xft:mono:size=12:antialias=true
 !URxvt.letterSpace: -1 for fixing space between letters
-URxvt.font: xft:Iosevka\ Term\:style=:pixelsize=15:antialias=true
+!URxvt.font: xft:Iosevka\ Term\:style=:pixelsize=15:antialias=true
 
 !bold disabled, not needed for solarized, but recommended if bright 'bold' text is not doable, i disabled it for now, because i had no problems
 URxvt.allow_bold: true
