@@ -40,3 +40,6 @@
 [submodule ".vim/plugged/vim-sensible"]
 	path = .vim/plugged/vim-sensible
 	url = git@github.com:tpope/vim-sensible.git
+[submodule ".vim/plugged/nvim-colorizer-lua"]
+	path = .vim/plugged/nvim-colorizer-lua
+	url = git@github.com:norcalli/nvim-colorizer.lua.git
